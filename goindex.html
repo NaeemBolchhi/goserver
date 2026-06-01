@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{.HeadElements}}
+</head>
+<body>
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="text" name="target_folder" placeholder="e.g. assets/" />
+        
+        <input type="file" name="upload_assets" multiple required />
+        <button type="submit">Upload Assets</button>
+        <span id="progress"></span>
+    </form>
+
+    <script>
+        const gostructure = {{.GoStructure}};
+        const goDir = {{.GoDir}};
+        const goWritable = {{.IsWritable}};
+        console.log("Directory structure loaded:", gostructure);
+        
+        // Form logic remains the same
+        document.getElementById('uploadForm').onsubmit = function(e) {
+            e.preventDefault();
+            var xhr = new XMLHttpRequest();
+            var p = document.getElementById('progress');
+            xhr.upload.onprogress = function(e) {
+                if(e.lengthComputable) p.innerText = e.loaded + ' bytes of ' + e.total + ' bytes';
+            };
+            xhr.onload = function() { location.reload(); };
+            xhr.open('POST', '/', true);
+            xhr.send(new FormData(this));
+        };
+    </script>
+</body>
+</html>

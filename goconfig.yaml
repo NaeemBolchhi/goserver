@@ -1,0 +1,38 @@
+# goserver.yaml configuration blueprint
+# Leave values blank or fill them out to customize your live viewport.
+
+page_info:
+  # Example: page_title: "My Project Dashboard"
+  - page_title: ""
+
+  # Example: page_description: "Local development server asset live view map."
+  - page_description: ""
+
+  # Example: favicon: "https://example.com/assets/favicon.ico" OR "/local-icon.png"
+  - favicon: ""
+
+# Custom Stylesheets
+# You can add items using either format shown below:
+#
+# FORMAT A (Standard Bullets - Be sure to remove the [] first!):
+# styles:
+#   - "https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
+#   - "body { background: #121212; }"
+#
+# FORMAT B (Inline Array - Put items directly inside the brackets):
+# styles: ["/css/theme.css", "h1 { color: red; }"]
+styles: []
+
+# Custom JavaScript
+# You can add items using either format shown below:
+#
+# FORMAT A (Standard Bullets - Be sure to remove the [] first!):
+# scripts:
+#   - "https://code.jquery.com/jquery-3.7.1.min.js"
+#   - "console.log('Loaded!');"
+#
+# FORMAT B (Inline Array - Put items directly inside the brackets):
+# scripts: ["/js/app.js", "alert('Welcome');"]
+scripts: []
+
+#test line
